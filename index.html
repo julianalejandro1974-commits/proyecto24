@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f0b1e">
+<title>Historias 24h</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+
+<header class="top">
+  <div class="brand"><span class="logo">◐</span><h1>Historias</h1></div>
+  <span id="testBadge" class="badge" hidden></span>
+</header>
+
+<main>
+  <section class="card">
+    <div class="strip" id="strip" aria-label="Historias">
+      <div class="addwrap">
+        <button class="add" id="addBtn" aria-label="Agregar historia">+</button>
+        <span>Tu historia</span>
+      </div>
+      <input type="file" id="fileInput" accept="image/*,video/*" hidden>
+    </div>
+    <div class="empty" id="empty">
+      <div class="emoji">✨</div>
+      <h2>Comparte un momento</h2>
+      <p>Pulsa <b>+</b> para subir una foto o un video. Desaparecerá solo a las 24 horas.</p>
+    </div>
+    <ul class="chips">
+      <li>🖼️ Imágenes hasta 1080×1920</li>
+      <li>🎬 Videos de cualquier resolución</li>
+      <li>⏳ Se eliminan a las 24 h</li>
+    </ul>
+  </section>
+  <p class="storage" id="storageInfo"></p>
+</main>
+
+<div class="viewer" id="viewer" hidden>
+  <div class="backdrop" id="backdrop"></div>
+  <button class="nav left" id="prevBtn" aria-label="Anterior">‹</button>
+  <div class="frame" id="frame">
+    <div class="bars" id="bars"></div>
+    <div class="meta">
+      <span id="metaTime"></span>
+      <span class="actions">
+        <button id="muteBtn" aria-label="Sonido" hidden>🔊</button>
+        <button id="closeBtn" aria-label="Cerrar">✕</button>
+      </span>
+    </div>
+    <img id="storyImg" alt="Historia" draggable="false" hidden>
+    <video id="storyVid" playsinline hidden></video>
+  </div>
+  <button class="nav right" id="nextBtn" aria-label="Siguiente">›</button>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
